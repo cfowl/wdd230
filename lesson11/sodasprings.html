@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Chris Fowler">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preston Idaho Weather | Chris Fowler's Weather Fortune Site | BYU-I</title>
+    <meta name="description" content="Preston Idaho Weather Forecast; for Chris Fowler's Weather Fortune site; for Web Design and Development I (WDD 230). This is for the Fall 2020 semester at Brigham Young University-Idaho (BYUI).">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Montserrat&family=Montserrat+Alternates:wght@500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" defer></script>
+    <script src="js/webfontload.js" defer></script>
+    <script src="js/responsive-menu.js" defer></script>
+    <script src="js/weather-api.js" defer></script>
+    <script src="js/towndata.js" defer></script>
+    <script src="js/dates.js" defer></script>
+</head>
+
+<body>
+
+  <aside id="announcment">Monday = Soda Springs Family Frenzy!
+    <br>6:00 p.m. Monday at the Hooper Springs Park.</aside>
+
+  <header>
+    <a href="index.html"><img class="main-logo" src="images/logo.png" alt="WeatherFortune.com Site Logo"></a>
+    <div class="title-motto">
+      <h1>Weather Fortune</h1>
+      <div class="motto">~ The Future of Your Weather ~</div>
+    </div>
+  </header>
+  <nav>
+    <ul class="navigation">
+      <li><a id="menu-button" href="#" onclick="toggleMenu()">Menu</a></li>
+      <li><a href="index.html">Home</a> </li>
+      <li><a href="preston.html">Preston</a></li>
+      <li><a class="active" href="#">Soda Springs</a></li>
+      <li><a href="fishhaven.html">Fish Haven</a></li>
+      <li><a href="stormcenter.html">Storm Center</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+  </nav>  
+
+  <main>
+
+    <h2 id="city-id">Soda Springs, Idaho</h2>
+
+    <div class="hero-div">
+      <picture>
+        <source media="(max-width: 500px)" srcset="images/sodasprings500.jpg">
+        <source media="(max-width: 800px)" srcset="images/sodasprings800.jpg">
+        <img class="hero-img" src="images/sodasprings1280.jpg" alt="Oregon Trail Trading Post Near Soda Springs">
+      </picture>
+
+      <section class="weather-summary">
+        <h3 class="summary-title">Weather Summary</h3>
+        <div class="names">
+          Conditions:<br>
+          Current Temp:<br>
+          Wind Speed:<br>
+          Wind Chill:<br>
+          Humidity:<br>
+        </div>
+        
+        <div class="values">
+          <span id="description"></span><br>
+          <span id="currenttemp"></span>&deg; F<br>
+          <span id="windspeed"></span> mph<br>
+          <span id="windchill"></span><br>
+          <span id="humidity"></span>%<br>
+        </div>
+      </section>
+    </div>
+
+    <div class="forecast-div">
+      <h3 class="forecast-title">5 Day Forecast</h3>
+
+      <section id="day1" class="day">
+        <h4>Tue</h4>
+        <div>
+          <img class="forecast-icon" src="#" alt="#">
+          <span></span>
+        </div>
+      </section>
+      
+      <section id="day2" class="day">
+        <h4>Wed</h4>
+        <div>
+          <img class="forecast-icon" src="#" alt="#">
+          <span></span>
+        </div>
+      </section>
+
+      <section id="day3" class="day">
+        <h4>Thur</h4>
+        <div>
+          <img class="forecast-icon" src="#" alt="#">
+          <span></span>
+        </div>
+      </section>
+
+      <section id="day4" class="day">
+        <h4>Fri</h4>
+        <div>
+          <img class="forecast-icon" src="#" alt="#">
+          <span></span>
+        </div>
+      </section>
+      
+      <section id="day5" class="day">
+        <h4>Sat</h4>
+        <div>
+          <img class="forecast-icon" src="#" alt="Current Weather Conditions Icon">
+          <span></span>
+        </div>
+      </section>
+
+    </div>
+
+    <div id="sodasprings-events" class="events"></div>    <!-- ID is tied to JavaScript in towndata.js -->
+
+    <article class="clearfix">
+      <img class="article-img" src="images/station.jpg" alt="Jim Fowler in front of his Beeline Station">
+      <h3 class="article-title">The Station</h3>
+      <h4 class="article-author">by Chris Fowler - 11/26/2020</h4>
+      <p class="article-text">
+        James Fowler was a prominent citizen of Soda Springs, Idaho. Around 1950, him and his brother, Vaughn
+        Fowler built a Beeline gas station on the east end of Soda Springs, highway 30. James owned and operated that service station until he sold it around 2008. During that time, it changed from Beeline to Husky to Sinclair. James Fowler was known to most people as Jim, but I knew him as grandpa.
+        <br><br>
+        Every summer I would spend a week at my grandma and grandpa Fowler's house. On some mornings in the summer, I spent time with Jim at his station. I learned to watch Jeopardy, do crossword puzzles, and I watched him do oil changes in the service bay. I remember how special I felt when he would let me pick a soda out of the cooler, or a candy off the shelf. Sometimes he would even let me reset the pumps. Jim had a daily excercise routine that he completed each morning at his station. All of his grandkids knew that Jim kept a pack of wintergreen gum in the desk drawer, along butterrum candy and cinnamon lifesavers in his pocket.
+        <br><br>
+        There are many things I remember from spending time with grandma and grandpa Fowler each summer. I remember going fishing with Jim, swimming at Lava Hot Springs, watching the red-hot slag of Monsanto ooze down the hillside, and drinking soda water from the naturally carbonated spring at Hooper Spring Park. One of the things I will always cherish is spending time with Jim at his Sinclair gas station.</p>
+    </article>
+
+    <div class="contact-div">
+      <a href="https://www.google.com/maps/place/186+W+2nd+N+St,+Preston,+ID+83263" target="blank">
+        <img class="contact-map" src="images/map.jpg" alt="Map showing Weather Fortune's headquarters">
+      </a>
+      <div class="contact-info">
+        &#9993; weatherfortune@email.com
+        <br>
+        &#9742; 208-WEA-THER
+        <br>
+        &#10140; 186 W 2nd N St, Preston, ID 83263
+        <br>
+        <a href="https://www.facebook.com" target="blank"><img class="social-icon" src="images/facebook.png" alt="Facebook Icon"></a>
+        <a href="https://www.instagram.com" target="blank"><img class="social-icon" src="images/instagram.png" alt="Instagram Icon"></a>
+        <a href="https://www.twitter.com" target="blank"><img class="social-icon" src="images/twitter.png" alt="Twitter Icon"></a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+
+    <div id="copyright">
+      <span id="currentYear"></span>
+      <span class="separate"> | </span>
+      <span><a href="/index.html">Chris Fowler</a></span>
+      <span class="separate"> | </span>
+      <span>Live Data From: <a href="https://openweathermap.org/" target="blank">OpenWeatherMap.org</a></span>
+    </div>
+
+    <div class="dates">
+      <span id="currentDate"></span>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

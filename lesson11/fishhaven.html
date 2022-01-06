@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Chris Fowler">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preston Idaho Weather | Chris Fowler's Weather Fortune Site | BYU-I</title>
+    <meta name="description" content="Preston Idaho Weather Forecast; for Chris Fowler's Weather Fortune site; for Web Design and Development I (WDD 230). This is for the Fall 2020 semester at Brigham Young University-Idaho (BYUI).">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Montserrat&family=Montserrat+Alternates:wght@500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" defer></script>
+    <script src="js/webfontload.js" defer></script>
+    <script src="js/responsive-menu.js" defer></script>
+    <script src="js/weather-api.js" defer></script>
+    <script src="js/towndata.js" defer></script>
+    <script src="js/dates.js" defer></script>
+</head>
+
+<body>
+
+  <aside id="announcment">Wednesday = Fish Haven Fishing Contest at Bear Lake!
+    <br>7:00 a.m. Wednesday at the Bear Lake marina.</aside>
+
+  <header>
+    <a href="index.html"><img class="main-logo" src="images/logo.png" alt="WeatherFortune.com Site Logo"></a>
+    <div class="title-motto">
+      <h1>Weather Fortune</h1>
+      <div class="motto">~ The Future of Your Weather ~</div>
+    </div>
+  </header>
+  <nav>
+    <ul class="navigation">
+      <li><a id="menu-button" href="#" onclick="toggleMenu()">Menu</a></li>
+      <li><a href="index.html">Home</a> </li>
+      <li><a href="preston.html">Preston</a></li>
+      <li><a href="sodasprings.html">Soda Springs</a></li>
+      <li><a class="active" href="#">Fish Haven</a></li>
+      <li><a href="stormcenter.html">Storm Center</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+  </nav>  
+
+  <main>
+
+    <h2 id="city-id">Fish Haven, Idaho</h2>
+
+    <div class="hero-div">
+      <picture>
+        <source media="(max-width: 500px)" srcset="images/fishhaven500.jpg">
+        <source media="(max-width: 800px)" srcset="images/fishhaven800.jpg">
+        <img class="hero-img" src="images/fishhaven1280.jpg" alt="Man Fishing at the Lake with Mountain Backdrop">
+      </picture>
+
+      <section class="weather-summary">
+        <h3 class="summary-title">Weather Summary</h3>
+        <div class="names">
+          Conditions:<br>
+          Current Temp:<br>
+          Wind Speed:<br>
+          Wind Chill:<br>
+          Humidity:<br>
+        </div>
+        
+        <div class="values">
+          <span id="description"></span><br>
+          <span id="currenttemp"></span>&deg; F<br>
+          <span id="windspeed"></span> mph<br>
+          <span id="windchill"></span><br>
+          <span id="humidity"></span>%<br>
+        </div>
+      </section>
+    </div>
+
+    <div class="forecast-div">
+      <h3 class="forecast-title">5 Day Forecast</h3>
+
+      <section id="day1" class="day">
+        <h4>Tue</h4>
+        <div>
+          <img class="forecast-icon" src="#" alt="#">
+          <span></span>
+        </div>
+      </section>
+      
+      <section id="day2" class="day">
+        <h4>Wed</h4>
+        <div>
+          <img class="forecast-icon" src="#" alt="#">
+          <span></span>
+        </div>
+      </section>
+
+      <section id="day3" class="day">
+        <h4>Thur</h4>
+        <div>
+          <img class="forecast-icon" src="#" alt="#">
+          <span></span>
+        </div>
+      </section>
+
+      <section id="day4" class="day">
+        <h4>Fri</h4>
+        <div>
+          <img class="forecast-icon" src="#" alt="#">
+          <span></span>
+        </div>
+      </section>
+      
+      <section id="day5" class="day">
+        <h4>Sat</h4>
+        <div>
+          <img class="forecast-icon" src="#" alt="#">
+          <span></span>
+        </div>
+      </section>
+
+    </div>
+
+    <div id="fishhaven-events" class="events"></div>    <!-- ID is tied to JavaScript in towndata.js -->
+
+    <article class="clearfix">
+      <img class="article-img" src="images/star.jpg" alt="A gold Christmas star">
+      <h3 class="article-title">Another Message of Peace</h3>
+      <h4 class="article-author">by Chris Fowler</h4>
+      <p class="article-text">
+        The following is a snippet of a Christmas message written by Chris Fowler in 2018:
+        <br><br>
+        "...“These things I have spoken unto you, that in me ye might have peace. In the world ye shall have
+        tribulation: but be of good cheer; I have overcome the world.” (John 16:33)
+        <br><br>
+        These words were spoken by Jesus near the end of His life. We shall have tribulation in the world, but
+        be of good cheer, He has overcome the world. Do you remember the words spoken by Jesus while
+        commanding the wind and the waves and the storm to cease? “Peace, be still,” He said, “and the wind
+        ceased, and there was a great calm.” (Mark 4:39)
+        <br><br>
+        There can be peace in the midst of the tribulations of this world.
+        <br><br>
+        And when the tribulation and adversity seems overwhelming, when it gets so burdensome, you may
+        think that even your Eternal Father has forsaken you. When it seems there is no peace on earth, nor
+        peace in your life, if you listen closely, you can hear the Son of God speak, “My son, peace be unto thy
+        soul; thine adversity and thine afflictions shall be but a small moment.” (D&C 121:7)
+        <br><br>
+        With Jesus, you shall have peace. Go unto Him, I say, and you shall have peace. He pleads “Come unto
+        me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn
+        of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy,
+        and my burden is light.” (Matthew 11:28-30)
+        <br><br>
+        If it is peace you seek, then go to Him. He will give you rest, He will give you rest unto your soul.
+        Again, He says “Learn of me, and listen to my words, walk in the meekness of my Spirit, and you shall
+        have peace in me.” (D&C 19:23)..."
+      </p>
+    </article>
+
+    <div class="contact-div">
+      <a href="https://www.google.com/maps/place/186+W+2nd+N+St,+Preston,+ID+83263" target="blank">
+        <img class="contact-map" src="images/map.jpg" alt="Map showing Weather Fortune's headquarters">
+      </a>
+      <div class="contact-info">
+        &#9993; weatherfortune@email.com
+        <br>
+        &#9742; 208-WEA-THER
+        <br>
+        &#10140; 186 W 2nd N St, Preston, ID 83263
+        <br>
+        <a href="https://www.facebook.com" target="blank"><img class="social-icon" src="images/facebook.png" alt="Facebook Icon"></a>
+        <a href="https://www.instagram.com" target="blank"><img class="social-icon" src="images/instagram.png" alt="Instagram Icon"></a>
+        <a href="https://www.twitter.com" target="blank"><img class="social-icon" src="images/twitter.png" alt="Twitter Icon"></a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+
+    <div id="copyright">
+      <span id="currentYear"></span>
+      <span class="separate"> | </span>
+      <span><a href="/index.html">Chris Fowler</a></span>
+      <span class="separate"> | </span>
+      <span>Live Data From: <a href="https://openweathermap.org/" target="blank">OpenWeatherMap.org</a></span>
+    </div>
+
+    <div class="dates">
+      <span id="currentDate"></span>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

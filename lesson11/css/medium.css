@@ -1,0 +1,227 @@
+/*************************** MEDIUM CSS FILES COMBINED ***************************/
+
+@media only screen and (min-width: 42em) {
+/* TOWN PAGES WERE 38.5em */
+/* STORM CENTER WAS 44em */
+/* GALLERY PAGE WAS 44em */
+
+    /******* SHARED CSS ACROSS ALL PAGES *******/
+    main, footer {
+        max-width: 1280px;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .main-logo {
+        margin: 1em;
+        width: 9em;
+        justify-self: end;
+        align-self: center;
+    }
+
+    .title-motto {
+        justify-self: start;
+        align-self: center;
+        margin-left: 1em;
+    }
+
+    header h1 {
+        font-size: 2.9em;
+    }
+
+    .motto {
+        font-size: 1.1em;
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navigation li {
+        display: block;
+        flex: 1 1 auto;
+    }
+
+    .navigation a {
+        text-align: center;
+        font-size: .825em;
+        padding: 1em;
+    }
+    
+    .navigation li:first-child {
+        display: none;
+    }
+
+
+    /* TOWN DATA STYLING */
+    div.town-info section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        max-width: 800px;
+        padding: 2em 0;
+    }
+    
+    div.town-info section:nth-of-type(odd) p {
+        grid-column: 1;
+        padding: 0;
+    }
+
+    div.town-info section:nth-of-type(even) p {
+        grid-column: 2;
+        padding: 0;
+    }
+
+    div.town-info section:nth-of-type(odd) img.town-img {
+        grid-column: 2;
+        grid-row: 1/6;
+        justify-self: center;
+        align-self: center;
+    }
+
+    div.town-info section:nth-of-type(even) img.town-img {
+        grid-column: 1;
+        grid-row: 1/6;
+        justify-self: center;
+        align-self: center;
+    }
+
+    div.town-info section img.town-img {
+        margin: 0;
+    }
+
+    div.town-info section h3 {
+        align-self: end;
+        margin: 0;
+    }
+
+    div.town-info section p.town-motto {
+        font-size: .85em;
+        margin: .25em;
+    }
+
+    div.town-info section div.info-div {
+        grid-row: 3/6;
+        margin: 1em 0 0 0;
+    }
+
+    /* WEATHER SUMMARY FOR TOWN PAGES */
+    .weather-summary {
+        position: absolute;
+        top: 30px;
+        left: 40px;
+        grid-template-columns: 3fr 2fr;
+        border-radius: 5px;
+        padding: 1.5em;
+        box-shadow: 0 0 10px black;
+    }
+
+    .names, .values, .summary-title {
+        filter: drop-shadow(1px 1px 1px white);
+    }
+
+    /* FIVE DAY FORECAST FOR TOWN PAGES */
+    .forecast-div {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        justify-items: center;
+        grid-gap: 2%;
+        padding: 0;
+        width: 90%;
+        margin: 2.5em auto;
+        text-align: center;
+    }
+
+    .forecast-div .day {
+        width: 98%;
+    }
+
+    .forecast-title {
+        grid-column: 1/6;
+        text-align: center;
+        margin: 1em 0 .6em 0;
+    }
+
+    .forecast-icon {
+        display: block;
+        margin: auto;
+    }
+
+    .forecast-div h4 {
+        background-color: #AF110E;
+        color: #FFF700;
+        margin: 0;
+        padding: .5em;
+    }
+
+    .forecast-div div {
+        background-color: #195671;
+        color: #FFF700;
+        padding: .25em 0 .75em 0;
+        font-weight: 600;
+    }
+
+    .forecast-div section {
+        box-shadow: 0 0 10px black;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    /* FORM STYLING FOR STORM CENTER PAGE */
+    form textarea.comments {
+        height: 200px;
+        max-width: 40em;
+    }
+
+    form input.submit {
+        margin: 0 0 2em 2%;
+    }
+
+    /* GALLERY GRID FOR GALLERY PAGE */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        margin: 3em 0;
+    }
+
+    /* THERE WAS SOME DIFFERNCE HERE FOR TOWN PAGES???????? CHECK IT!!!!! */
+    .article-img {
+        float: right;
+        max-width: initial;
+        margin: 0 0 .5em 1em;
+        border-radius: 5px;
+    }
+
+    .contact-div {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        justify-items: center;
+        margin: 0 auto;
+    }
+
+    .contact-map{
+        display: block;
+        max-width: 300px;
+        width: 100%;
+    }
+    
+    .contact-info {
+        margin-left: 20px;
+        text-align: left;
+        font-weight: initial;
+    }
+    
+    footer span {
+        display: initial;
+    }
+    
+    .separate {
+        display: initial;
+    }
+
+}
