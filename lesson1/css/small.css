@@ -68,6 +68,10 @@ footer {
     color: #ffd145;
 }
 
+#currentYear a {
+    text-decoration: none;
+}
+
 .dates {
     font-size: 12pt;
     color: #ffd145;
